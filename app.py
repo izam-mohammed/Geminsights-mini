@@ -21,7 +21,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
 
 
 dataframe = None
-st.title("GemInsights")
+st.title("GemInsights 📊")
+st.caption('A gemini powered data analysis tool to get insights from data 🔥')
 file = st.file_uploader(
     "Pick a dataframe", type=["csv", "xlsx"], accept_multiple_files=False
 )
@@ -44,7 +45,7 @@ if file is not None:
     )
 
     option = st.selectbox(
-        "Which is the target column?",
+        "Which is the target column ? 🎯",
         tuple(list(dataframe.columns)),
         index=None,
         placeholder="Select one column in here",
@@ -110,7 +111,7 @@ def generate(dataframe, text_input, option):
     return res
 
 if st.button("Get Insights", type="primary"):
-    st.write("generating insights ...")
+    st.write("generating insights ⏳ ... ")
     # running the pipeline
 
     response = generate(dataframe, text_input, option)
