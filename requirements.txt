@@ -14,3 +14,4 @@ ipython
 google-cloud-aiplatform
 markdown
 llama-index
+openpyxl
