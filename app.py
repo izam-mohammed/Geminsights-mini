@@ -10,6 +10,7 @@ from google.cloud import aiplatform
 import base64
 import vertexai
 from vertexai.preview.generative_models import GenerativeModel, Part
+import json
 
 #setup cloud
 aiplatform.init(
@@ -17,8 +18,9 @@ aiplatform.init(
     location="us-central1"
     )
 
+json_file = json.loads(st.secrets["credentials"], strict=False)
 with open("credentials.json", "w") as f:
-    f.write(st.secrets["credentials"])
+    json.dump(json_file, f, indent=2)
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
 
