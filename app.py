@@ -13,9 +13,12 @@ from vertexai.preview.generative_models import GenerativeModel, Part
 
 #setup cloud
 aiplatform.init(
-    project = "ultra-heading-407815",
+    project = "geminsights",
     location="us-central1"
     )
+
+with open("credentials.json", "w") as f:
+    f.write(st.secrets["credentials"])
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
 
