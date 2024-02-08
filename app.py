@@ -12,7 +12,7 @@ import vertexai
 from vertexai.preview.generative_models import GenerativeModel, Part
 import json
 
-#setup cloud
+
 aiplatform.init(
     project = "geminsights",
     location="us-central1"
